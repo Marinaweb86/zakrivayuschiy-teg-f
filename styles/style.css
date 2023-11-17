@@ -17,4 +17,334 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  padding-block-start: 102px;
+  color: var(--text-color, #000000);
+  font-family: var(--page-main-font-family, "Inter", sans-serif);
+  background-color: var(--page-background-color, #ffffff);
+  background-image: var(--page-background-image, none);
+  background-size: cover;
+  background-attachment: fixed;
+  font-variation-settings: "weight" var(--page-main-font-weight, 400);
+}
+
+.page__header {
+  margin-block-end: 105px;
+}
+
+.header {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  text-transform: uppercase;
+  line-height: normal;
+}
+
+.header__title-accent {
+  margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  margin-block-end: 20px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.header__theme-menu {
+  margin-block: 25px;
+}
+
+.theme-menu__list {
+  display: grid;
+  gap: 14px;
+  padding-inline-start: 20px;
+}
+
+.button {
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--text-color, #000000);
+  padding: 9px 17px;
+  background: var(--page-background-color, #ffffff);
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  font-size: 14px;
+  text-transform: inherit;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--text-color, #000000);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--text-color, #000000);
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.theme-menu__button {
+  position: relative;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:not(:disabled)::after {
+  content: "";
+  display: block;
+  inline-size: 100%;
+  block-size: 2px;
+  background: currentColor;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible:after {
+  transform: scaleX(1);
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  inset-inline-start: -10px;
+  inset-block-start: 0;
+  animation: arrow 0.5s ease-in-out infinite alternate;;
+}
+
+.main {
+  display: grid;
+  justify-items: center;
+  gap: 54px;
+  padding-block-end: 105px;
+}
+
+.cards-list {
+  display: grid;
+  gap: 57px;
+}
+
+.card {
+  margin-inline: auto;
+  border: 2px solid var(--text-color, #000000);
+  background: var(--page-background-color, #ffffff);
+  max-inline-size: 696px;
+}
+
+.card__title {
+  border-block-end: 2px solid var(--text-color, #000000);
+  font-size: 18px;
+  line-height: normal;
+  padding: 2px 10px;
+  background: var(--page-background-color, #ffffff);
+}
+
+.card-image__container {
+  position: relative;
+  z-index: 1;
+}
+
+.card-image-text {
+  position: absolute;
+  z-index: 1;
+  color: var(--text-color, #000000);
+  opacity: 0.5;
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  font-size: 14px;
+  line-height: normal;
+  text-shadow: 0 0 1px var(--page-background-color, #ffffff);
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  mix-blend-mode: hard-light;
+}
+
+.card__image {
+  display: block;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+.brightness {
+  filter: brightness(220%)
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.invert {
+  filter: invert(0.7);
+}
+
+.saturate {
+  filter: saturate(300%);
+}
+
+.multiple {
+  filter: saturate(500%) brightness(90%) invert(0.9);
+}
+
+.gray-bright {
+  filter: brightness(80%) grayscale(0.8);
+}
+
+.card__content {
+  display: grid;
+  gap: 27px;
+  border-block-start: 2px solid var(--text-color, #000000);
+  padding: 25px 25px;
+  font-size: 18px;
+  line-height: calc(21 / 18);
+}
+
+.card-button {
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+  gap: 12px;
+  padding: 0 25px 25px 0;
+}
+
+.card__icon-button {
+  display: grid;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid transparent;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text-color, #000000);
+}
+
+.like-icon {
+  block-size: 36px;
+  inline-size: 39px;
+}
+
+.button__text,
+.button__icon {
+  color: var(--button-text-color, #ffffff);
+  mix-blend-mode: difference;
+}
+
+.button--save {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 51px;
+  gap: 8px;
+}
+
+.modal {
+  border: 2px solid var(--text-color, #000000);
+  padding: 31.5px 32.5px;
+  color: var(--text-color, #000000);
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: var(--page-background-color, #ffffff);
+  max-inline-size: 357px;
+}
+
+.modal[open] {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 30px;
+}
+
+.modal::backdrop {
+  opacity: 0.75;
+  background: var(--color-black, #000000);
+}
+
+.modal__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__icon {
+  flex-shrink: 0;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.modal__button {
+  inline-size: 100%;
+}
+
+@media (width < 375px) {
+  .modal {
+    padding: 32px 42px;
+    max-inline-size: 341px;
+  }
+  .button--save {
+    flex-direction: column;
+  }
+
+  .button__icon {
+    block-size: 28px;
+    inline-size: 28px;
+  }
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--page-background-color, #ffffff)) or
+    (text-stroke: 1px var(--page-background-color, #ffffff))
+) {
+  .card__img-text {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--page-background-color, #ffffff);
+    text-stroke: 1px var(--page-background-color, #ffffff);
+  }
 }
