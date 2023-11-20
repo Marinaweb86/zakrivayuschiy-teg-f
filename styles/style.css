@@ -24,7 +24,7 @@
   background-image: var(--page-background-image, none);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: "weight" var(--page-main-font-weight, 400);
+  font-variation-settings: "wght" var(--page-main-font-weight, 400);
 }
 
 .page__header {
@@ -38,11 +38,13 @@
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   text-transform: uppercase;
   line-height: normal;
+  padding: 1px;
 }
 
 .header__title-accent {
   margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
-  margin-block-end: 20px;
+  margin-block-end: 25px;
+  text-decoration: none;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
@@ -57,7 +59,7 @@
 .theme-menu__list {
   display: grid;
   gap: 14px;
-  padding-inline-start: 20px;
+  padding-inline-start: 25px;
 }
 
 .button {
@@ -143,9 +145,9 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  inset-inline-start: -10px;
+  inset-inline-start: -20px;
   inset-block-start: 0;
-  animation: arrow 0.5s ease-in-out infinite alternate;;
+  animation: arrow 0.5s ease-in-out infinite alternate;
 }
 
 .main {
@@ -171,7 +173,8 @@
   border-block-end: 2px solid var(--text-color, #000000);
   font-size: 18px;
   line-height: normal;
-  padding: 2px 10px;
+  padding: 5px 10px;
+  font-variation-settings: "wght" var(--headings-font-weight, 700);
   background: var(--page-background-color, #ffffff);
 }
 
@@ -183,12 +186,12 @@
 .card-image-text {
   position: absolute;
   z-index: 1;
-  color: var(--text-color, #000000);
   opacity: 0.5;
+  color: var(--text-color, #000000);
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   font-size: 14px;
   line-height: normal;
-  text-shadow: 0 0 1px var(--page-background-color, #ffffff);
+  text-shadow: 0 0 2px var(--page-background-color, #ffffff);
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
@@ -249,12 +252,12 @@
 
 .card__icon-button {
   display: grid;
-  padding: 0;
-  cursor: pointer;
-  appearance: none;
   border: 2px solid transparent;
+  padding: 0;
   background: transparent;
   transition: border-color 0.3s ease;
+  cursor: pointer;
+  appearance: none;
 }
 
 .card__icon-button:focus {
@@ -263,6 +266,12 @@
 
 .card__icon-button:focus-visible {
   border-color: var(--text-color, #000000);
+}
+
+.card__like-button {
+  width: 130px;
+  padding: 9px 17px;
+  flex-shrink: 0;
 }
 
 .like-icon {
@@ -274,14 +283,22 @@
 .button__icon {
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
+  white-space: nowrap;
+}
+
+.button__icon {
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 .button--save {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 335px;
   height: 51px;
+  padding: 15px 20px;
   gap: 8px;
 }
 
@@ -323,18 +340,40 @@
   inline-size: 100%;
 }
 
+.button__icon {
+  flex-shrink: 0;
+  inline-size: 21px;
+  block-size: 21px;
+}
+
 @media (width < 375px) {
+
+  .card__title {
+   font-variation-settings: "wght" var(--page-main-font-weight, 785);
+  }
+
+  .card__paragraph {
+    font-variation-settings: "wght" var(--page-main-font-weight, 465);
+  }
+
   .modal {
     padding: 32px 42px;
     max-inline-size: 341px;
   }
+
   .button--save {
     flex-direction: column;
+    height: 80px; 
   }
 
   .button__icon {
     block-size: 28px;
     inline-size: 28px;
+    margin-top: 15px;
+  }
+
+  .button__text {
+    white-space: wrap;
   }
 }
 
@@ -342,7 +381,7 @@
   (-webkit-text-stroke: 1px var(--page-background-color, #ffffff)) or
     (text-stroke: 1px var(--page-background-color, #ffffff))
 ) {
-  .card__img-text {
+  .card__image-text {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--page-background-color, #ffffff);
     text-stroke: 1px var(--page-background-color, #ffffff);
