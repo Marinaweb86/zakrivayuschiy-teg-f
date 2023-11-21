@@ -17,7 +17,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  padding-block-start: 102px;
+  padding-block-start: 100px;
   color: var(--text-color, #000000);
   font-family: var(--page-main-font-family, "Inter", sans-serif);
   background-color: var(--page-background-color, #ffffff);
@@ -28,7 +28,7 @@
 }
 
 .page__header {
-  margin-block-end: 105px;
+  margin-block-end: 102px;
 }
 
 .header {
@@ -43,9 +43,13 @@
 
 .header__title-accent {
   margin-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
-  margin-block-end: 25px;
+  margin-block-end: 20px;
   text-decoration: none;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title-accent:focus {
+  outline: none;
 }
 
 .header__title {
@@ -53,12 +57,13 @@
 }
 
 .header__theme-menu {
-  margin-block: 25px;
+  margin-block-start: 25px;
+  margin-block-end: 25px;
 }
 
 .theme-menu__list {
   display: grid;
-  gap: 14px;
+  gap: 10px;
   padding-inline-start: 25px;
 }
 
@@ -153,13 +158,13 @@
 .main {
   display: grid;
   justify-items: center;
-  gap: 54px;
-  padding-block-end: 105px;
+  gap: 50px;
+  padding-block-end: 103px;
 }
 
 .cards-list {
   display: grid;
-  gap: 57px;
+  gap: 50px;
 }
 
 .card {
@@ -167,6 +172,7 @@
   border: 2px solid var(--text-color, #000000);
   background: var(--page-background-color, #ffffff);
   max-inline-size: 696px;
+  flex-shrink: 0;
 }
 
 .card__title {
@@ -246,7 +252,7 @@
   display: flex;
   justify-content: end;
   align-items: stretch;
-  gap: 12px;
+  gap: 6px;
   padding: 0 25px 25px 0;
 }
 
@@ -297,7 +303,7 @@
   justify-content: center;
   align-items: center;
   width: 335px;
-  height: 51px;
+  min-height: 51px;
   padding: 15px 20px;
   gap: 8px;
 }
@@ -348,8 +354,17 @@
 
 @media (width < 375px) {
 
+  .main {
+    padding-block-end: 100px;
+  }
+
   .card__title {
-   font-variation-settings: "wght" var(--page-main-font-weight, 785);
+    font-variation-settings: "wght" var(--headings-font-weight, 785); 
+  }
+
+  .card-image-text {
+    inset-inline-end: 11px;
+    inset-block-start: 23px;
   }
 
   .card__paragraph {
@@ -363,17 +378,14 @@
 
   .button--save {
     flex-direction: column;
-    height: 80px; 
+    max-inline-size: 306px;
+    min-height: 80px; 
   }
 
   .button__icon {
     block-size: 28px;
     inline-size: 28px;
     margin-top: 15px;
-  }
-
-  .button__text {
-    white-space: wrap;
   }
 }
 
