@@ -28,7 +28,7 @@
 }
 
 .page__header {
-  margin-block-end: 102px;
+  margin-block-end: 100px;
 }
 
 .header {
@@ -38,7 +38,6 @@
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   text-transform: uppercase;
   line-height: normal;
-  padding: 1px;
 }
 
 .header__title-accent {
@@ -57,13 +56,12 @@
 }
 
 .header__theme-menu {
-  margin-block-start: 25px;
-  margin-block-end: 25px;
+  margin-block: 25px;
 }
 
 .theme-menu__list {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   padding-inline-start: 25px;
 }
 
@@ -159,12 +157,12 @@
   display: grid;
   justify-items: center;
   gap: 50px;
-  padding-block-end: 103px;
+  padding-block-end: 105px;
 }
 
 .cards-list {
   display: grid;
-  gap: 50px;
+  gap: 52px;
 }
 
 .card {
@@ -289,7 +287,6 @@
 .button__icon {
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
-  white-space: nowrap;
 }
 
 .button__icon {
@@ -302,10 +299,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 335px;
-  min-height: 51px;
   padding: 15px 20px;
-  gap: 8px;
+  gap: 10px;
 }
 
 .modal {
@@ -354,8 +349,16 @@
 
 @media (width < 375px) {
 
+  .page__header {
+    margin-block-end: 104px;
+  }
+
   .main {
-    padding-block-end: 100px;
+    padding-block-end: 102px;
+  }
+
+  .card__list {
+    gap: 50px;
   }
 
   .card__title {
@@ -378,8 +381,7 @@
 
   .button--save {
     flex-direction: column;
-    max-inline-size: 306px;
-    min-height: 80px; 
+    min-height: 80px;
   }
 
   .button__icon {
