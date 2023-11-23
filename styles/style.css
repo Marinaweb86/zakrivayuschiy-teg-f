@@ -69,7 +69,7 @@
   position: relative;
   z-index: 1;
   border: 2px solid var(--text-color, #000000);
-  padding: 9px 17px;
+  padding: 10px 36px;
   background: var(--page-background-color, #ffffff);
   font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
   font-size: 14px;
@@ -162,7 +162,7 @@
 
 .cards-list {
   display: grid;
-  gap: 52px;
+  gap: 50px;
 }
 
 .card {
@@ -204,6 +204,7 @@
 .card__image {
   display: block;
   inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1 / 1;
@@ -299,8 +300,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 15px 20px;
   gap: 10px;
+  padding: 15px 20px;
 }
 
 .modal {
@@ -357,30 +358,18 @@
     padding-block-end: 102px;
   }
 
-  .card__list {
-    gap: 50px;
-  }
-
-  .card__title {
-    font-variation-settings: "wght" var(--headings-font-weight, 785); 
-  }
-
   .card-image-text {
     inset-inline-end: 11px;
-    inset-block-start: 23px;
-  }
-
-  .card__paragraph {
-    font-variation-settings: "wght" var(--page-main-font-weight, 465);
   }
 
   .modal {
-    padding: 32px 42px;
+    padding: 30px 40px;
     max-inline-size: 341px;
   }
 
   .button--save {
     flex-direction: column;
+    padding-top: 1px;
     min-height: 80px;
   }
 
