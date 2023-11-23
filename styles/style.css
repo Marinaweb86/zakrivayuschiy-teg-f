@@ -363,20 +363,17 @@
   }
 
   .modal {
-    padding: 30px 40px;
-    max-inline-size: 341px;
+    padding: 28px 34px 28px 40px;
+    max-inline-size: 340px;
   }
 
   .button--save {
     flex-direction: column;
-    padding-top: 1px;
-    min-height: 80px;
   }
 
   .button__icon {
     block-size: 28px;
     inline-size: 28px;
-    margin-top: 15px;
   }
 }
 
