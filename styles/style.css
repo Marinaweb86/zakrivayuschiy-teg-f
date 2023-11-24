@@ -330,6 +330,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  font-size: 14px;
 }
 
 .modal__icon {
@@ -348,7 +349,7 @@
   block-size: 21px;
 }
 
-@media (width < 375px) {
+@media (width <= 375px) {
 
   .page__header {
     margin-block-end: 104px;
@@ -364,7 +365,7 @@
 
   .modal {
     padding: 30px 40px;
-    min-width: 341px;
+    max-width: 341px;
   }
 
   .button--save {
